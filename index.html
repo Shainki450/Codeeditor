@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+ <html>
+    <head>
+
+   
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <tilte>
+        Live Code Editor
+    </tilte>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+     <body> 
+         <div class="container">
+            <div class="left">
+             <label>HTML</label>
+              <textarea id="html-code"onkeyup="run()"></textarea>
+
+             <label>CSS</label>
+             <textarea id="CSS-code"onkeyup="run()"></textarea>
+    
+             <label>JavaScript</label>
+              <textarea id="js-code"onkeyup="run()"></textarea>
+          </div> 
+         
+              <div class="Right ">
+                    <label>Output</label>
+                    <iframe id="output"></iframe>
+                </div>
+             
+               
+             <script type="text/javascript">
+              function run(){
+              let htmlcode= document.querySelector("html-code").value;
+              let csscode= document.querySelector("css-code").value;
+              let jscode= document.querySelector("js-code").value;
+              let Output= document.querySelector("Output");
+          
+               Output.contentDocument.body.innerHTML = htmlcode +"<style>"+ csscode + "</style>";
+               output.contentWindow.eval(jscode);
+                }
+               
+               </script>
+         </div>    
+    
+
+        </body>
+ </html>
